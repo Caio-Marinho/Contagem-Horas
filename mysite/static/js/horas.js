@@ -33,7 +33,7 @@
                 success: function (data) {
                     atualizar(data.hora);
                     
-                    window.addEventListener('load', function(event) {
+                    document.getElementById('posicao').addEventListener('load', function(event) {
                         // Se for um evento de carga, aplica uma cor específica (por exemplo, preto)
                         aplicarCor('black');
                     
