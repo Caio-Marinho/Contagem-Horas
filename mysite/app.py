@@ -26,7 +26,10 @@ def python():
 def horas():
     hora = datetime.now().strftime("%H:%M:%S")
     hoje = datetime.today()
-    return {'hora': hora, "hoje": hoje}
+    resposta = {'hora': hora, "hoje": hoje}
+    response = jsonify(resposta)
+    response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate'
+    return response
 
 
 @app.route('/teste')
