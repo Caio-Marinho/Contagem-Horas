@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chroma-js@2.1.0/chroma.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="../static/js/horas.js"></script>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="ICON" type="image/x-icon" href="https://img.kalunga.com.br/FotosdeProdutos/660992d.jpg">
+    <title>HORAS</title>
+</head>
+<body onload="updateTime(),hora()">
+    <center>
+        <h1>Meu Primeiro JavaScript</h1>
+    <!--
+    <button type="button" onclick="updateTime()">
+        Click me to display Date and Time.
+    </button>
+    -->
+        <h2>Horas executando pelo arquivo em JS</h2>
+        <h3 id="horas"></h3>
+        <h5>Servidor python local com tunnel pelo ngrok para permitindo que fique online</h5>
+        <p>
+            A cada refresh ou a cada vez que clicar no altualizar a hora é feita uma requisição no back-end que está em python para 
+            mostrar as horas,de forma estática
+        </p>
+        <p id="ajax"></P>
+        <p>
+            <a href="https://chat.openai.com/share/3b25da42-e3b1-4624-af3f-0ddfc2ed36e4" target="_blanck">Definições</a>
+        </p>
+        <form action="/python-horas">
+            <button class="button" type="submit">Próxima Página</button>
+        </form>
+        <button class="button" id="posicao" onclick="hora()">Atualizar a hora</button>
+    </center>
+</body>
+</html>
