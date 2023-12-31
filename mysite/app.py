@@ -11,8 +11,7 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 @app.route('/')
 def index():
-    horas = datetime.now().strftime("%H:%M:%S")
-    return render_template('index.html', horas=horas)
+    return render_template('index.html')
 
 
 @app.route('/python-horas')
