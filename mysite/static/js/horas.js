@@ -1,4 +1,4 @@
-        // Função para atualizar a hora
+    // Função para atualizar a hora
         function updateTime() {
             // Obtém a data e hora atuais
             var currentDate = new Date();

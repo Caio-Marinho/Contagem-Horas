@@ -74,6 +74,3 @@ def teste(codigo):
     else:
         # Se a solicitação não for bem-sucedida, exibe o código de status
         return f"A solicitação falhou com o código de status {response.status_code}"
-
-
-
