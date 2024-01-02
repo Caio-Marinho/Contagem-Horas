@@ -23,7 +23,7 @@
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8));
     transition: transform 1.0s ease-in-out;
     cursor: pointer;
-    user-select: none;
+    -webkit-user-select: none;
     margin-right: 10px;
 }
 
@@ -41,10 +41,27 @@
 #route{
     position: absolute;
     right: 50%;
+    bottom: 290px;
 }
 
 #time-color{
     position: relative;
     right: 100px;
     left: 50%;
+    bottom: 75px;
+}
+.position{
+    position: relative;
+    left: 90%;
+}
+.dark-mode{
+    background-color: black;
+    color: white;
+}
+
+.centro{
+    position: relative;
+    text-align: center;
+    bottom: 75px;
+    
 }
