@@ -29,13 +29,13 @@
                 success: function (data) {
                     atualizar(data.hora);
                     
-                    document.getElementById('posicao').addEventListener('load', function(event) {
+                    document.getElementById('time-color').addEventListener('load', function(event) {
                         // Se for um evento de carga, aplica uma cor específica (por exemplo, preto)
                         aplicarCor('black');
                     
                         // Outras ações que você deseja realizar no carregamento...
                     });
-                    document.getElementById('posicao').addEventListener('click', function(event) {
+                    document.getElementById('time-color').addEventListener('click', function(event) {
                         // Obtém a cor aleatória
                         var corGerada = corAleatoria();
                         // Aplica a cor ao texto usando o ID do elemento
