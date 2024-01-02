@@ -15,10 +15,6 @@
         color: SteelBlue; /* 75%, azul claro */
     }
 }
-.center {
-    text-align: center;
-}
-
 .button {
     display: inline-block;
     border-radius: 40px;
@@ -28,7 +24,7 @@
     transition: transform 1.0s ease-in-out;
     cursor: pointer;
     user-select: none;
-    margin: 10px;
+    margin-right: 10px;
 }
 
 .button:hover {
@@ -41,4 +37,14 @@
 .button:active {
     transform: scale(0.95);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+#route{
+    position: absolute;
+    right: 50%;
+}
+
+#time-color{
+    position: relative;
+    right: 100px;
+    left: 50%;
 }
