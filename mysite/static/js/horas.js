@@ -49,7 +49,7 @@
         }
         // funçao para atualizar hora
         function atualizar(horas){
-            $("#ajax").text("Pela requisição do back python as horas são: " + horas);
+            $("#ajax").text(horas);
         }
         //função para aplicar cor
         function aplicarCor(cor){
