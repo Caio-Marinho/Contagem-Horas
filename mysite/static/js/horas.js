@@ -93,17 +93,18 @@
         document.getElementById('route').addEventListener('click',python_horas);
         window.onload = python_horas;
 
+        //codigo para pular a pagina de aviso do ngrok
         const url = "https://amused-martin-sacred.ngrok-free.app/"
-const headers = {
-    "ngrok-skip-browser-warning": "1",
-}
+        const headers = {
+            "ngrok-skip-browser-warning": "1",
+        }
 
-fetch(url, {
-    headers,
-})
-    .then((response) => {
-        console.log(response.status)
-    })
-    .catch((error) => {
-        console.error(error)
-    })
+        fetch(url, {
+            headers,
+        })
+            .then((response) => {
+                console.log(response.status)
+            })
+            .catch((error) => {
+                console.error(error)
+            })
