@@ -59,6 +59,8 @@
         function corAleatoria() { 
             // Verifica se o modo escuro está ativado
             const modoEscuroAtivado = document.body.classList.contains('dark-mode');
+
+            //Semparar as cores claras e escuras
             const light = chroma.random().brighten().hex();
             const dark = chroma.random().darken().hex();
 
