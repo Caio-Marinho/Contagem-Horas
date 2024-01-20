@@ -85,4 +85,10 @@
             const elemento = document.body;
             elemento.classList.toggle('dark-mode');
         }
-        
+
+        function python_horas(){
+            let rota = '/python-horas';
+            window.location.href = rota;
+        }
+        document.getElementById('route').addEventListener('click',python_horas);
+        window.onload = python_horas;
