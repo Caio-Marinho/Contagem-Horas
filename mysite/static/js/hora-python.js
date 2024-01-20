@@ -28,7 +28,6 @@
             let desligado = document.getElementById('lampada').src;
             const  ligar = (desligado===light)? dark : light;
             document.getElementById('lampada').src = ligar;
-            
             dark_mode();
         }
 
