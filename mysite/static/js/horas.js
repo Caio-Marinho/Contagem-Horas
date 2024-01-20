@@ -63,7 +63,6 @@
             //Semparar as cores claras e escuras
             const light = chroma.random().brighten().hex();
             const dark = chroma.random().darken().hex();
-
             // Gera uma cor aleatória usando Chroma.js
             return modoEscuroAtivado ? light : dark
         }
