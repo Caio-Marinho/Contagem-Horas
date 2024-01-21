@@ -22,17 +22,4 @@
         
         window.onload = voltar;
 
-        function lampada(){
-            let light = "https://www.w3schools.com/html/pic_bulboff.gif";
-            let dark = "https://www.w3schools.com/html/pic_bulbon.gif";
-            let desligado = document.getElementById('lampada').src;
-            const  ligar = (desligado===light)? dark : light;
-            document.getElementById('lampada').src = ligar;
-            dark_mode();
-        }
-
-        function dark_mode(){
-            const elemento = document.body;
-            elemento.classList.toggle('dark-mode');
-            document.getElementById('name').text = 'light mode';
-        }
+        
