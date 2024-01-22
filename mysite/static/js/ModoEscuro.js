@@ -1,10 +1,14 @@
+
 function lampada(){
-    let light = "https://www.w3schools.com/html/pic_bulboff.gif";
-    let dark = "https://www.w3schools.com/html/pic_bulbon.gif";
+    let light = ["https://www.w3schools.com/html/pic_bulboff.gif",'dark mode'];
+    let dark = ["https://www.w3schools.com/html/pic_bulbon.gif",'light mode'];
     let desligado = document.getElementById('lampada').src;
-    const  ligar = (desligado===light)? dark : light;
+    
+    // Define a imagem da lâmpada e o texto com base no estado do modo escuro
+    const  ligar = (desligado===light[0])? dark[0] : light[0];
     document.getElementById('lampada').src = ligar;
-    const nome = (desligado===light)?'light mode':'dark mode';
+
+    const nome = (desligado===light[0])?dark[1]:light[1];
     document.getElementById('name').innerHTML = nome;
     dark_mode();
 }
@@ -24,12 +28,16 @@ function dark_mode() {
 // Função para verificar e aplicar o modo escuro
 function VerificarModoEscuro() {
     // Obtém o estado atual do modo escuro do armazenamento local
-    const modoEscuroAtivado = localStorage.getItem('modoEscuro');
+    const modoEscuroAtivado = localStorage.getItem('modoEscuro')==='true';
     const elemento = document.body;
 
     // Usa o operador ternário para adicionar ou remover a classe 'dark-mode'
     modoEscuroAtivado ? elemento.classList.add('dark-mode') : elemento.classList.remove('dark-mode');
+    return modoEscuroAtivado.toString();
 }
 
 // Chama a função para verificar e aplicar o modo escuro ao carregar a página
-VerificarModoEscuro();
+document.addEventListener('DOMContentLoaded', function() {
+    VerificarModoEscuro();
+});
+
