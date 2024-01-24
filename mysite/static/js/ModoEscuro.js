@@ -36,13 +36,22 @@ function ControlarLampada() {
 }
 
 // Função para verificar e aplicar as funções controlar e aplicar
-function VerificarModoEscuro() {
+function VerificarModEscuro() {
+    // Ativa modo escuro
     AtivarModoEscuro();
+    
+    // Controles de lampada
     ControlarLampada();
+    
+    // Pega nome do local storage ou define como 'dark mode'
     const nome = localStorage.getItem('nome') || 'dark mode';
+    
+    // Define nome no elemento HTML
     document.getElementById('name').innerHTML = nome;
+    
+    // Imprime local storage no console
     console.log(localStorage);
-}
+   }
 
 // Função para alternar a imagem da lâmpada e o modo escuro
 function lampada() {
