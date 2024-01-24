@@ -67,7 +67,6 @@ function lampada() {
     document.getElementById('name').innerHTML = nome;
 
     // Console.log para verificar se a classe 'lampadaAtiva' está sendo aplicada corretamente
-    console.log(modoEscuroAtivado?"O modo Escuro está Ativado":"O modo Escuro está desativado");
     console.log(lampadaAtivada?"A Lampada está ativada":"A Lampada está desativada");
     console.log(localStorage);
 
