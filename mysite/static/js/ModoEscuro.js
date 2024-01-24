@@ -25,7 +25,7 @@ function VerificarModoEscuro() {
     const lampadaElement = document.getElementById('lampada');
 
     if (lampadaAtivada) {
-        lampadaElementAtivado = localStorage.getItem('lampadaUrlAtiva') || "https://www.w3schools.com/html/pic_bulbon.gif";
+        lampadaElement.src = localStorage.getItem('lampadaUrlAtiva') || "https://www.w3schools.com/html/pic_bulbon.gif";
     } else {
         lampadaElement.src = localStorage.getItem('lampadaUrlInativa') || "https://www.w3schools.com/html/pic_bulboff.gif";
     }
