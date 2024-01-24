@@ -60,6 +60,7 @@ body{
     transform: scale(0.95);
     box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
 }
+
 #route{
     position: absolute;
     right: 50%;
