@@ -34,7 +34,9 @@ function VerificarModoEscuro() {
     document.getElementById('name').innerHTML = nome;
 
     // Console.log para verificar se a classe 'lampadaAtiva' está sendo aplicada corretamente
-    console.log(lampadaAtivada);
+    console.log(modoEscuroAtivado?"O modo Escuro está Ativado":"O modo Escuro está desativado");
+    console.log(lampadaAtivada?"A Lampada está ativada":"A Lampada está desativada");
+    console.log(localStorage);
     return modoEscuroAtivado.toString();
 }
 
@@ -63,6 +65,11 @@ function lampada() {
 
     // Define o nome no elemento com id 'name'
     document.getElementById('name').innerHTML = nome;
+
+    // Console.log para verificar se a classe 'lampadaAtiva' está sendo aplicada corretamente
+    console.log(modoEscuroAtivado?"O modo Escuro está Ativado":"O modo Escuro está desativado");
+    console.log(lampadaAtivada?"A Lampada está ativada":"A Lampada está desativada");
+    console.log(localStorage);
 
     // Chama a função para ativar ou desativar o modo escuro
     dark_mode();
