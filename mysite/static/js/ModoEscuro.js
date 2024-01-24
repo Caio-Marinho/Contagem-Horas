@@ -9,19 +9,21 @@ function dark_mode() {
     const modoEscuroAtivado = elemento.classList.contains('dark-mode');
     localStorage.setItem('modoEscuro', modoEscuroAtivado.toString());
 }
-
-// Função para verificar e aplicar o modo escuro
-function VerificarModoEscuro() {
-    // Obtém o estado atual do modo escuro do armazenamento local
+// Função para ativar ou desativar o modo escuro
+function AtivarModoEscuro() {
     const modoEscuroAtivado = localStorage.getItem('modoEscuro') === 'true';
-    const lampadaAtivada = localStorage.getItem('lampadaAtiva') === 'true';
-    const nome = localStorage.getItem('nome') || 'dark mode'; // Obtém o nome salvo ou usa 'dark mode' como padrão
     const elemento = document.body;
 
-    // Usa o operador ternário para adicionar ou remover a classe 'dark-mode'
     modoEscuroAtivado ? elemento.classList.add('dark-mode') : elemento.classList.remove('dark-mode');
 
-    // Usa classList.add ou classList.remove para adicionar ou remover a classe 'lampadaAtiva'
+    console.log(modoEscuroAtivado ? "O modo Escuro está Ativado" : "O modo Escuro está desativado");
+
+    return modoEscuroAtivado.toString();
+}
+
+// Função para controlar o estado da lâmpada
+function ControlarLampada() {
+    const lampadaAtivada = localStorage.getItem('lampadaAtiva') === 'true';
     const lampadaElement = document.getElementById('lampada');
 
     if (lampadaAtivada) {
@@ -30,30 +32,32 @@ function VerificarModoEscuro() {
         lampadaElement.src = localStorage.getItem('lampadaUrlInativa') || "https://www.w3schools.com/html/pic_bulboff.gif";
     }
 
-    // Define o nome no elemento com id 'name'
-    document.getElementById('name').innerHTML = nome;
+    console.log(lampadaAtivada ? "A Lâmpada está ativada" : "A Lâmpada está desativada");
+}
 
-    // Console.log para verificar se a classe 'lampadaAtiva' está sendo aplicada corretamente
-    console.log(modoEscuroAtivado?"O modo Escuro está Ativado":"O modo Escuro está desativado");
-    console.log(lampadaAtivada?"A Lampada está ativada":"A Lampada está desativada");
+// Função para verificar e aplicar as funções controlar e aplicar
+function VerificarModoEscuro() {
+    AtivarModoEscuro();
+    ControlarLampada();
+    const nome = localStorage.getItem('nome') || 'dark mode';
+    document.getElementById('name').innerHTML = nome;
     console.log(localStorage);
-    return modoEscuroAtivado.toString();
 }
 
 // Função para alternar a imagem da lâmpada e o modo escuro
 function lampada() {
     const light = ["https://www.w3schools.com/html/pic_bulboff.gif", 'dark mode'];
     const dark = ["https://www.w3schools.com/html/pic_bulbon.gif", 'light mode'];
-    const desligado = document.getElementById('lampada').src;
+    const desligado = document.getElementById('lampada').src === light[0];
 
     // Define a imagem da lâmpada e o texto com base no estado do modo escuro
-    const ligar = (desligado === light[0]) ? dark[0] : light[0];
+    const ligar = desligado ? dark[0] : light[0];
     document.getElementById('lampada').src = ligar;
 
-    const nome = (desligado === light[0]) ? dark[1] : light[1];
+    const nome = desligado ? dark[1] : light[1];
 
     // Obtém o estado atual da lâmpada do armazenamento local
-    const lampadaAtivada = (desligado === light[0]);
+    const lampadaAtivada = desligado;
     localStorage.setItem('lampadaAtiva', lampadaAtivada.toString());
 
     // Salva as URLs da lâmpada no armazenamento local
