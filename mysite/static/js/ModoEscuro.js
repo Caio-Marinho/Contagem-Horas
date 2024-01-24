@@ -36,7 +36,7 @@ function ControlarLampada() {
 }
 
 // Função para verificar e aplicar as funções controlar e aplicar
-function VerificarModEscuro() {
+function VerificarModoEscuro() {
     // Ativa modo escuro
     AtivarModoEscuro();
     
@@ -89,6 +89,5 @@ function lampada() {
 
 // Chama a função para verificar e aplicar o modo escuro ao carregar a página
 document.addEventListener('DOMContentLoaded', function() {
-    // Chama a função para verificar e aplicar o estado da lâmpada
     VerificarModoEscuro();
 });
