@@ -5,7 +5,7 @@
                 url: '/horas', // URL da requisição
                 success: function(data) { // Função de callback caso a requisição seja bem-sucedida
                     // Atualizando o conteúdo do elemento com o ID 'hora'
-                    $('#hora').text('hora atual é: ' + data.hora);
+                    $('#hora').text(data.hora);
                 }
             });
         }
