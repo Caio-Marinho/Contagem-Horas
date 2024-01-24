@@ -22,16 +22,30 @@ body{
         color: SteelBlue; /* 75%, azul claro */
     }
 }
-.button {
+.button { /* botão */
     display: inline-block;
     border-radius: 40px;
+
+    /* fundo verde */
     background-color: green !important;
+
+    /* sombra */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+    /* gradiente de fundo */
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8));
+
+    /* animação para efeito de hover */
     transition: transform 1.0s ease-in-out;
+
+    /* ponteiro ao passar o mouse */
     cursor: pointer;
+
+    /* desabilitar seleção de texto */
     -webkit-user-select:none;
     user-select: none;
+
+    /* espaçamento entre botões */
     margin-right: 10px;
 }
 
@@ -44,7 +58,7 @@ body{
 
 .button:active {
     transform: scale(0.95);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
 }
 #route{
     position: absolute;
