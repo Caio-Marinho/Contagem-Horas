@@ -2,10 +2,12 @@
 * {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
 body{
     max-width: 100%;
     
 }
+
 #horas {
     font-size: 2em;
     animation: piscar 1s infinite;
@@ -22,6 +24,7 @@ body{
         color: SteelBlue; /* 75%, azul claro */
     }
 }
+
 .button { /* botão */
     display: inline-block;
     border-radius: 40px;
@@ -78,6 +81,7 @@ body{
     top: 10px;
     cursor: pointer;
 }
+
 .dark-mode{
     background-color: black;
     color: white;
@@ -88,9 +92,11 @@ body{
     text-align: center;
     bottom: 15px;
 }
+
 .linha{
     display: inline;
 }
+
 #name{
     margin-top: 20px;
 }
