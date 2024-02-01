@@ -13,7 +13,8 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 def index():
     # Obtém o endereço IP real da requisição usando o cabeçalho X-Forwarded-For
     ip_address = request.headers.get('X-Forwarded-For', request.remote_addr)
-    print(ip_address)
+    user_agent = request.headers.get('User-Agent', '')
+    print(f"Esse IP {ip_address} e de {user_agent}")
     return render_template('index.html')
 
 
