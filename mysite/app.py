@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, jsonify, make_response
+from flask import Flask, render_template, redirect, url_for, jsonify, make_response,request
 from flask_cors import CORS
 from datetime import datetime
 import requests
@@ -11,6 +11,9 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 @app.route('/')
 def index():
+    # Obtém o endereço IP real da requisição usando o cabeçalho X-Forwarded-For
+    ip_address = request.headers.get('X-Forwarded-For', request.remote_addr)
+    print(ip_address)
     return render_template('index.html')
 
 
