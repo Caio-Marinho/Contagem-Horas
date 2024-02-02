@@ -12,22 +12,25 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 @app.route('/')
 def index():
-    # Obtém o endereço IP real da requisição usando o cabeçalho X-Forwarded-For
-    cabecalho = json.dumps(dict(request.headers), indent=2)
-    headers = dict(request.headers)
-    rota = request.path
-    Data_hora = datetime.now().strftime("%H:%M:%S do Dia %d/%m/%Y")
-    ip_endereco = request.headers.get('X-Forwarded-For', request.remote_addr)
-    user_agent = request.headers.get('User-Agent')
-    sistema = request.headers.get('Sec-Ch-Ua-Platform')
-    navegadores = ["Google Chrome","Microsoft Edge","Opera GX","OperaMobile","Samsung Internet","Safari","Android WebView",
-                   "Brave"]
-    print(cabecalho)
-    for navegador in navegadores:
-        if navegador in headers['Sec-Ch-Ua']:
-            print(f"Esse IP {ip_endereco} exatamente as {Data_hora} fez o acesso é pelo {user_agent} utilizando o navegador "
-                  f"{"OperaGXMobile"if navegador == "Android WebView" else navegador} estando no sistema operacional {sistema}")
-    return render_template('index.html')
+    try:
+        # Obtém o endereço IP real da requisição usando o cabeçalho X-Forwarded-For
+        cabecalho = json.dumps(dict(request.headers), indent=2)
+        headers = dict(request.headers)
+        rota = request.path
+        Data_hora = datetime.now().strftime("%H:%M:%S do Dia %d/%m/%Y")
+        ip_endereco = request.headers.get('X-Forwarded-For', request.remote_addr)
+        user_agent = request.headers.get('User-Agent')
+        sistema = request.headers.get('Sec-Ch-Ua-Platform')
+        navegadores = ["Google Chrome","Microsoft Edge","Opera GX","OperaMobile","Samsung Internet","Safari","Android WebView",
+                    "Brave"]
+        print(cabecalho)
+        for navegador in navegadores:
+            if navegador in headers['Sec-Ch-Ua']:
+                print(f"Esse IP {ip_endereco} exatamente as {Data_hora} fez o acesso é pelo {user_agent} utilizando o navegador "
+                    f"{"OperaGXMobile"if navegador == "Android WebView" else navegador} estando no sistema operacional {sistema}")
+        return render_template('index.html')
+    except:
+        return render_template('index.html')
 
 
 @app.route('/python-horas')
