@@ -1,0 +1,44 @@
+2024-02-02 08:33:22,212 - INFO - Serving on http://127.0.0.1:5000
+2024-02-02 08:33:25,367 - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\caiog\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\caiog\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\caiog\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\caiog\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\caiog\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\caiog\Downloads\Contagem-Horas\mysite\app.py", line 25, in index
+    log_data = f"Endereço IP: {request.remote_addr} - Timestamp: {request.headers.get('Date')} - Método HTTP: {request.method} - URL Solicitada: {request.path} - Código de Status HTTP: {response.status_code} - Tamanho da Resposta: {len(response.data)} bytes - Navegador do Usuário: {user_agent} - Sistema Operacional: {request.headers.get('User-Agent').split('(')[1].split(';')[1].strip()} - Referenciador: {referer}"
+                                                                                                                                                                                          ^^^^^^^^
+NameError: name 'response' is not defined
+2024-02-02 08:33:51,728 - INFO - Serving on http://127.0.0.1:5000
+2024-02-02 08:33:52,975 - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\caiog\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\caiog\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\caiog\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\caiog\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\caiog\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\caiog\Downloads\Contagem-Horas\mysite\app.py", line 25, in index
+    log_data = f"Endereço IP: {request.remote_addr} - Timestamp: {request.headers.get('Date')} - Método HTTP: {request.method} - URL Solicitada: {request.path} - Código de Status HTTP: {response.status_code} - Tamanho da Resposta: {len(response.data)} bytes - Navegador do Usuário: {user_agent} - Sistema Operacional: {request.headers.get('User-Agent').split('(')[1].split(';')[1].strip()} - Referenciador: {referer}"
+                                                                                                                                                                                          ^^^^^^^^
+NameError: name 'response' is not defined

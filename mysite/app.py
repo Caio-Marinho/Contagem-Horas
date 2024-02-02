@@ -12,9 +12,13 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 @app.route('/')
 def index():
     # Obtém o endereço IP real da requisição usando o cabeçalho X-Forwarded-For
-    ip_address = request.headers.get('X-Forwarded-For', request.remote_addr)
-    user_agent = request.headers.get('User-Agent', '')
-    print(f"Esse IP {ip_address} e de {user_agent}")
+    cabecalho = dict(request.headers)
+    rota = request.path
+    Data_hora = datetime.now().strftime("%H:%M:%S do Dia %d/%m/%Y")
+    ip_endereco = request.headers.get('X-Forwarded-For', request.remote_addr)
+    user_agent = request.headers.get('User-Agent')
+    navegador = "Google Chrome" if cabecalho['Sec-Ch-Ua'][23:36] == "Google Chrome" else ("Microsoft Edge" if cabecalho['Sec-Ch-Ua'][23:37] == "Microsoft Edge" else "Opera GX") 
+    print(f"Esse IP {ip_endereco} exatamente as {Data_hora} e o acesso é pelo {user_agent} sendo o navegador {navegador}")
     return render_template('index.html')
 
 
