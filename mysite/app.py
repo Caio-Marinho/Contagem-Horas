@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, url_for, jsonify, make_respo
 from flask_cors import CORS
 from datetime import datetime
 import requests
+import json
 
 app = Flask(__name__)
 # CORS usando para Edges(ngrok)
@@ -12,13 +13,20 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 @app.route('/')
 def index():
     # Obtém o endereço IP real da requisição usando o cabeçalho X-Forwarded-For
-    cabecalho = dict(request.headers)
+    cabecalho = json.dumps(dict(request.headers), indent=2)
+    headers = dict(request.headers)
     rota = request.path
     Data_hora = datetime.now().strftime("%H:%M:%S do Dia %d/%m/%Y")
     ip_endereco = request.headers.get('X-Forwarded-For', request.remote_addr)
     user_agent = request.headers.get('User-Agent')
-    navegador = "Google Chrome" if cabecalho['Sec-Ch-Ua'][23:36] == "Google Chrome" else ("Microsoft Edge" if cabecalho['Sec-Ch-Ua'][23:37] == "Microsoft Edge" else "Opera GX") 
-    print(f"Esse IP {ip_endereco} exatamente as {Data_hora} e o acesso é pelo {user_agent} sendo o navegador {navegador}")
+    sistema = request.headers.get('Sec-Ch-Ua-Platform')
+    navegadores = ["Google Chrome","Microsoft Edge","Opera GX","OperaMobile","Samsung Internet","Safari","Android WebView",
+                   "Brave"]
+    print(cabecalho)
+    for navegador in navegadores:
+        if navegador in headers['Sec-Ch-Ua']:
+            print(f"Esse IP {ip_endereco} exatamente as {Data_hora} fez o acesso é pelo {user_agent} utilizando o navegador "
+                  f"{"OperaGXMobile"if navegador == "Android WebView" else navegador} estando no sistema operacional {sistema}")
     return render_template('index.html')
 
 
