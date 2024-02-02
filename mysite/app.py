@@ -47,6 +47,12 @@ def horas():
     resposta = {'hora': hora, "hoje": hoje}
     response = jsonify(resposta)
     response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate'
+    """headers = dict(request.headers)
+    navegadores = ["Google Chrome","Microsoft Edge","Opera GX","OperaMobile","Samsung Internet","Safari","Android WebView",
+                    "Brave"]
+    for navegador in navegadores:
+        if navegador in headers['Sec-Ch-Ua']:
+            response.headers['Sec-Ch-Ua'] = navegador"""
     return response
 
 
