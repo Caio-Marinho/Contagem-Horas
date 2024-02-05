@@ -52,7 +52,7 @@ def horas():
                     "Brave"]
     for navegador in navegadores:
         if navegador in headers['Sec-Ch-Ua']:
-            response.headers['Sec-Ch-Ua'] = navegador
+            response.headers['Sec-Ch-Ua'] = "OperaGXMobile"if navegador == "Android WebView" else navegador
     return response
 
 
