@@ -16,7 +16,7 @@ function AtivarModoEscuro() {
 
     modoEscuroAtivado ? elemento.classList.add('dark-mode') : elemento.classList.remove('dark-mode');
 
-    console.log(modoEscuroAtivado ? "O modo Escuro está Ativado" : "O modo Escuro está desativado");
+    console.log(modoEscuroAtivado ? "O modo Escuro está Ativado" : "O modo Escuro está Desativado");
 
     return modoEscuroAtivado.toString();
 }
