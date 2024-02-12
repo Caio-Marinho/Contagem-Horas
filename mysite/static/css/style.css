@@ -80,6 +80,9 @@ body{
     position: relative;
     top: 10px;
     cursor: pointer;
+    /* desabilitar seleção de texto */
+    -webkit-user-select:none;
+    user-select: none;
 }
 
 .dark-mode{
@@ -99,4 +102,7 @@ body{
 
 #name{
     margin-top: 20px;
+    /* desabilitar seleção de texto */
+    -webkit-user-select:none;
+    user-select: none;
 }
