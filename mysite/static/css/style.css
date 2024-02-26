@@ -17,7 +17,7 @@ body{
     0%, 100% {
         color: red;
         transform: rotateY(0deg);
-        transform: rotateY(360deg);
+        
     }
     50% {
         color: Green; /* No meio, verde claro */
@@ -25,7 +25,7 @@ body{
     }
     75% {
         color: SteelBlue; /* 75%, azul claro */
-        transform:rotateY(270deg) ;
+        transform: rotateY(360deg);
     }
 }
 
