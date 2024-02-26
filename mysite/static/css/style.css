@@ -10,18 +10,22 @@ body{
 
 #horas {
     font-size: 2em;
-    animation: piscar 1s infinite;
+    animation: piscar 5s infinite;
 }
 
 @keyframes piscar {
     0%, 100% {
         color: red;
+        transform: rotateY(0deg);
+        transform: rotateY(360deg);
     }
     50% {
         color: Green; /* No meio, verde claro */
+        transform: rotateY(180deg);
     }
     75% {
         color: SteelBlue; /* 75%, azul claro */
+        transform:rotateY(270deg) ;
     }
 }
 
