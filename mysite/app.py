@@ -27,7 +27,7 @@ def index():
         for navegador in navegadores:
             if navegador in headers['Sec-Ch-Ua']:
                 print(f"Esse IP {ip_endereco} exatamente as {Data_hora} fez o acesso é pelo {user_agent} utilizando o navegador "
-                    f"{"OperaGXMobile"if navegador == "Android WebView" else navegador} estando no sistema operacional {sistema}")
+                    f"{"OperaGXMobile"if navegador == "Android WebView" else navegador} estando no sistema operacional : {sistema}")
         return render_template('index.html')
     except:
         return render_template('index.html')
