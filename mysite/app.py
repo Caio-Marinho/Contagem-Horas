@@ -20,7 +20,7 @@ def index():
         Data_hora = datetime.now().strftime("%H:%M:%S do Dia %d/%m/%Y")
         ip_endereco = request.headers.get('X-Forwarded-For', request.remote_addr)
         user_agent = request.headers.get('User-Agent')
-        sistema = request.headers.get('Sec-Ch-Ua-Platform')
+        sistema = request.headers.get('Sec-Ch-Ua-Platform')[1:-1]
         navegadores = ["Google Chrome","Microsoft Edge","Opera GX","OperaMobile","Samsung Internet","Safari","Android WebView",
                     "Brave"]
         print(cabecalho)
