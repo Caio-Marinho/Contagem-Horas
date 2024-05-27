@@ -11,6 +11,7 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 
 @app.route('/')
+@app.route('/index')
 def index():
     try:
         # Obtém o endereço IP real da requisição usando o cabeçalho X-Forwarded-For
